@@ -91,7 +91,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Icon(
-                  Icons.calendar_today,
+                  Icons.room_service,
                   size: 80,
                   color: Theme.of(context).colorScheme.primary,
                 ),

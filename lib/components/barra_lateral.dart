@@ -25,7 +25,7 @@ class BarraLateral extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
+            leading: const Icon(Icons.calendar_today),
             title: const Text('Cadastro de Hóspede'),
             onTap: () {
               Navigator.pushReplacement(
@@ -49,8 +49,8 @@ class BarraLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.add),
-            title: const Text('Cadastro de Quartos'),
+            leading: const Icon(Icons.bed),
+            title: const Text('Lista de Quartos'),
             onTap: () {
               // Implementar futuramente
               ScaffoldMessenger.of(context).showSnackBar(
