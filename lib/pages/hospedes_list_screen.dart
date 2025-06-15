@@ -1,8 +1,6 @@
-// hospedes_list_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/guest_card.dart';
-import 'package:flutter_application_1/main.dart'; // Idealmente, importe a classe MyHomePage diretamente
+import 'package:flutter_application_1/pages/hospede_form.dart'; // Idealmente, importe a classe MyHomePage diretamente
 import 'package:flutter_application_1/model/hsoepde_model.dart';
 import 'package:flutter_application_1/service/hospede_manager.dart';
 
