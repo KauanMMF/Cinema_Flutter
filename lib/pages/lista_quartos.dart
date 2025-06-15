@@ -72,12 +72,12 @@ class _ListaQuartosState extends State<ListaQuartos> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de Quartos'),
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       drawer: const BarraLateral(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepPurple,
         onPressed: () => navegaParaCadastroQuarto(),
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.white),
       ),
       body: FutureBuilder<List<Quarto>>(
         future: reqAssincronaDosQuartos,

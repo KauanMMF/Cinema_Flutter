@@ -158,7 +158,6 @@ class _CadastroHospedeState extends State<CadastroHospede> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(_isEditing ? 'Editar Hóspede' : widget.title),
       ),
       drawer: const BarraLateral(),
@@ -278,6 +277,10 @@ class _CadastroHospedeState extends State<CadastroHospede> {
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: _submitForm,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                ),
                 child: Text(_isEditing ? 'Salvar Alterações' : 'Cadastrar'),
               ),
               const SizedBox(height: 10),
@@ -292,7 +295,7 @@ class _CadastroHospedeState extends State<CadastroHospede> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey[200],
-                  foregroundColor: Colors.red,
+                  foregroundColor: Colors.deepPurple,
                 ),
                 child: const Text('Listar Hóspedes'),
               ),

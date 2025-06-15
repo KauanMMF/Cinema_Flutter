@@ -173,6 +173,8 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
                     child: Text('Cadastrar'),
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
+                      backgroundColor: Colors.deepPurple,
+                      foregroundColor: Colors.white,
                     ),
                   ),
                   Padding(

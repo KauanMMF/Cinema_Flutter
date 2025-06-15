@@ -8,7 +8,8 @@ class CadastroQuarto extends StatefulWidget {
   final String titulo;
   final Quarto? quartoParaEditar;
 
-  const CadastroQuarto({super.key, required this.titulo, this.quartoParaEditar});
+  const CadastroQuarto(
+      {super.key, required this.titulo, this.quartoParaEditar});
 
   @override
   State<CadastroQuarto> createState() => _CadastroQuartoState();
@@ -50,7 +51,9 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
     if (chaveDoForm.currentState!.validate()) {
       final novoQuarto = Quarto(
         //colocando a data atual como ID para o cadastro
-        id: estaEditandoQuarto ? widget.quartoParaEditar!.id : DateTime.now().toIso8601String(),
+        id: estaEditandoQuarto
+            ? widget.quartoParaEditar!.id
+            : DateTime.now().toIso8601String(),
         nome: nome.text,
         numero: numero.text,
         tipo: tipoSelecionado!,
@@ -65,7 +68,10 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
       }
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(estaEditandoQuarto ? 'Quarto atualizado!' : 'Quarto cadastrado!')),
+        SnackBar(
+            content: Text(estaEditandoQuarto
+                ? 'Quarto atualizado!'
+                : 'Quarto cadastrado!')),
       );
 
       Navigator.pushReplacement(
@@ -80,7 +86,6 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.titulo),
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       drawer: const BarraLateral(),
       body: Padding(
@@ -95,7 +100,8 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
                   labelText: 'Nome do Quarto',
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) => value == null || value.isEmpty ? 'Informe o nome' : null,
+                validator: (value) =>
+                    value == null || value.isEmpty ? 'Informe o nome' : null,
               ),
               const SizedBox(height: 20),
               TextFormField(
@@ -104,7 +110,8 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
                   labelText: 'Número do Quarto',
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) => value == null || value.isEmpty ? 'Informe o número' : null,
+                validator: (value) =>
+                    value == null || value.isEmpty ? 'Informe o número' : null,
               ),
               const SizedBox(height: 20),
               DropdownButtonFormField<String>(
@@ -140,7 +147,12 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: salvarInformacoes,
-                child: Text(estaEditandoQuarto ? 'Salvar Alterações' : 'Cadastrar'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text(
+                    estaEditandoQuarto ? 'Salvar Alterações' : 'Cadastrar'),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
@@ -154,7 +166,7 @@ class _CadastroQuartoState extends State<CadastroQuarto> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey[200],
-                  foregroundColor: Colors.red,
+                  foregroundColor: Colors.deepPurple,
                 ),
                 child: const Text('Voltar para Lista de Quartos'),
               ),

@@ -23,6 +23,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.deepPurple, // Cor da AppBar
+        iconTheme: IconThemeData(color: Colors.white), // Ícones brancos (menu, voltar, etc)
+        titleTextStyle: TextStyle( // Texto branco
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       ),
       home: const LoginUsuario(title: 'Login'),
     );

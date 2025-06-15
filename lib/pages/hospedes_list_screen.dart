@@ -79,7 +79,6 @@ class _ListaHospedesState extends State<ListaHospedes> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hóspedes Cadastrados'),
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       drawer: const BarraLateral(),
       body: FutureBuilder<List<Hospede>>(
