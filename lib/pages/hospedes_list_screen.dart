@@ -5,14 +5,14 @@ import 'package:flutter_application_1/model/hsoepde_model.dart';
 import 'package:flutter_application_1/service/hospede_manager.dart';
 import 'package:flutter_application_1/components/barra_lateral.dart';
 
-class HospedesListScreen extends StatefulWidget {
-  const HospedesListScreen({super.key});
+class ListaHospedes extends StatefulWidget {
+  const ListaHospedes({super.key});
 
   @override
-  State<HospedesListScreen> createState() => _HospedesListScreenState();
+  State<ListaHospedes> createState() => _ListaHospedesState();
 }
 
-class _HospedesListScreenState extends State<HospedesListScreen> {
+class _ListaHospedesState extends State<ListaHospedes> {
   final HospedeManager _hospedeManager = HospedeManager();
   late Future<List<Hospede>> _hospedesFuture;
 
@@ -32,7 +32,7 @@ class _HospedesListScreenState extends State<HospedesListScreen> {
     // Espera a tela de edição fechar para então atualizar a lista
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => MyHomePage(
+        builder: (context) => CadastroHospede(
           title: 'Editar Hóspede',
           hospedeParaEditar: hospede,
         ),

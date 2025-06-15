@@ -31,7 +31,7 @@ class BarraLateral extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const MyHomePage(title: 'Cadastro de Hóspede'),
+                  builder: (context) => const CadastroHospede(title: 'Cadastro de Hóspede'),
                 ),
               );
             },
@@ -43,7 +43,7 @@ class BarraLateral extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HospedesListScreen(),
+                  builder: (context) => const ListaHospedes(),
                 ),
               );
             },
@@ -68,7 +68,7 @@ class BarraLateral extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const LoginPage(title: 'Login'),
+                  builder: (context) => const LoginUsuario(title: 'Login'),
                 ),
               );
             },

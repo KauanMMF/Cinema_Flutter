@@ -4,14 +4,14 @@ import 'package:flutter_application_1/pages/cadatro.dart';
 import 'package:flutter_application_1/service/account_manager.dart';
 import 'package:flutter_application_1/service/sesseion.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
+class LoginUsuario extends StatefulWidget {
+  const LoginUsuario({super.key, required this.title});
   final String title;
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginUsuario> createState() => _LoginUsuarioState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginUsuarioState extends State<LoginUsuario> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             context,
             MaterialPageRoute(
               builder: (context) =>
-                  const MyHomePage(title: 'Cadastro de Hóspede'),
+                  const CadastroHospede(title: 'Cadastro de Hóspede'),
             ),
           );
         } else {
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 24.0),
                 Text(
-                  'Bem-vindo!',
+                  'Bem-vindo(a)!',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
@@ -217,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => RegistrationScreen(),
+                            builder: (context) => CadastroUsuario(),
                           ),
                         );
                       },

@@ -5,12 +5,12 @@ import 'package:flutter_application_1/service/account_manager.dart';
 import 'package:flutter_application_1/components/CpfInputFormatter.dart';
 import 'package:flutter/services.dart';
 
-class RegistrationScreen extends StatefulWidget {
+class CadastroUsuario extends StatefulWidget {
   @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  _CadastroUsuarioState createState() => _CadastroUsuarioState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _CadastroUsuarioState extends State<CadastroUsuario> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _cpfController = TextEditingController();
@@ -41,7 +41,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => LoginPage(title: "Login"),
+              builder: (context) => LoginUsuario(title: "Login"),
             ),
           );
 
@@ -175,16 +175,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       minimumSize: Size(double.infinity, 50),
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginPage(title: "Login"),
-                        ),
-                      );
-                    },
-                    child: Text('Voltar ao Login'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginUsuario(title: "Login"),
+                          ),
+                        );
+                      },
+                      child: const Text('Voltar ao Login'),
+                    ),
                   ),
                 ],
               ),

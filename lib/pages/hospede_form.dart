@@ -8,21 +8,21 @@ import 'package:flutter_application_1/service/sesseion.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_application_1/components/barra_lateral.dart';
 
-class MyHomePage extends StatefulWidget {
+class CadastroHospede extends StatefulWidget {
   final String title;
   final Hospede? hospedeParaEditar;
 
-  const MyHomePage({
+  const CadastroHospede({
     super.key,
     required this.title,
     this.hospedeParaEditar,
   });
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CadastroHospede> createState() => _CadastroHospedeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CadastroHospedeState extends State<CadastroHospede> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nomeClienteController = TextEditingController();
   final TextEditingController _cpfController = TextEditingController();
@@ -286,7 +286,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HospedesListScreen(),
+                      builder: (context) => const ListaHospedes(),
                     ),
                   );
                 },
