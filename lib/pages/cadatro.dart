@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/user_model.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/service/account_manager.dart';
+import 'package:flutter_application_1/components/CpfInputFormatter.dart';
+import 'package:flutter/services.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -115,9 +117,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       labelText: 'CPF',
                       border: OutlineInputBorder(),
                     ),
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      CpfInputFormatter(),
+                    ],
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Por favor, insira seu CPF.';
+                      }
+                      if (value.length != 14) {
+                        return 'CPF inválido. Use o formato 000.000.000-00';
                       }
                       return null;
                     },
@@ -164,6 +174,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(title: "Login"),
+                        ),
+                      );
+                    },
+                    child: Text('Voltar ao Login'),
                   ),
                 ],
               ),
