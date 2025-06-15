@@ -1,7 +1,7 @@
 // lib/components/guest_card.dart
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/hsoepde_model.dart';
+import 'package:flutter_application_1/model/hospede_model.dart';
 import 'package:intl/intl.dart';
 
 class GuestCard extends StatelessWidget {

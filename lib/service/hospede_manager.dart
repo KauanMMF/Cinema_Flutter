@@ -1,7 +1,7 @@
 // hospede_manager.dart
 import 'dart:convert';
 
-import 'package:flutter_application_1/model/hsoepde_model.dart';
+import 'package:flutter_application_1/model/hospede_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HospedeManager {

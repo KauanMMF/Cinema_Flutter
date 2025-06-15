@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/CpfInputFormatter.dart';
-import 'package:flutter_application_1/model/hsoepde_model.dart';
+import 'package:flutter_application_1/model/hospede_model.dart';
 import 'package:flutter_application_1/pages/hospedes_list_screen.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/service/hospede_manager.dart';
