@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Icon(
-                  Icons.lock_outline,
+                  Icons.calendar_today,
                   size: 80,
                   color: Theme.of(context).colorScheme.primary,
                 ),

@@ -6,6 +6,7 @@ import 'package:flutter_application_1/pages/hospedes_list_screen.dart';
 import 'package:flutter_application_1/service/hospede_manager.dart';
 import 'package:flutter_application_1/service/sesseion.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_application_1/components/barra_lateral.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -50,9 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _numeroQuartoController.text = hospede.numeroQuarto;
       _tipoQuartoSelecionado = hospede.tipoQuarto;
       _dataEntrada = hospede.dataEntrada;
-      _dataEntradaController.text = DateFormat('dd/MM/yyyy').format(hospede.dataEntrada);
+      _dataEntradaController.text =
+          DateFormat('dd/MM/yyyy').format(hospede.dataEntrada);
       _dataSaida = hospede.dataSaida;
-      _dataSaidaController.text = DateFormat('dd/MM/yyyy').format(hospede.dataSaida);
+      _dataSaidaController.text =
+          DateFormat('dd/MM/yyyy').format(hospede.dataSaida);
     }
   }
 
@@ -72,7 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
     'Deluxe',
   ];
 
-  Future<void> _selectDate(BuildContext context, {required bool isEntrada}) async {
+  Future<void> _selectDate(BuildContext context,
+      {required bool isEntrada}) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -157,6 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(_isEditing ? 'Editar Hóspede' : widget.title),
       ),
+      drawer: const BarraLateral(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -278,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const HospedesListScreen(),
