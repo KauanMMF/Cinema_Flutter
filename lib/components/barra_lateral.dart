@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/lista_quartos.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/pages/hospede_form.dart';
 import 'package:flutter_application_1/pages/hospedes_list_screen.dart';
@@ -52,10 +53,10 @@ class BarraLateral extends StatelessWidget {
             leading: const Icon(Icons.bed),
             title: const Text('Lista de Quartos'),
             onTap: () {
-              // Implementar futuramente
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Funcionalidade em desenvolvimento.'),
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ListaQuartos(),
                 ),
               );
             },
