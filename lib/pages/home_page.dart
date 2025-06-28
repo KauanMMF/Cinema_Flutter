@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Filmes predefinidos
     final filmes = [
       Filme(
         id: '1',
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
         posterUrl:
             'https://xl.movieposterdb.com/23_10/2023/15398776/xl_oppenheimer-movie-poster_0d167e2f.jpg',
         ano: 2023,
-        assentos: List.filled(40, false),
+        assentos: List.filled(40, false), // 40 assentos disponíveis
       ),
       Filme(
         id: '2',
@@ -35,17 +36,22 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black, // Cor de fundo preta
+
+      // Barra superior com o título do app
       appBar: AppBar(
         title: const Text('Absoluto Cinema'),
-        backgroundColor: Colors.red[900],
-        centerTitle: true,
+        backgroundColor: Colors.red[900], // Vermelho escuro
+        centerTitle: true, // Centraliza o texto
       ),
+
+      // Corpo da tela
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Título "Filmes em destaque"
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
@@ -57,17 +63,24 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+
+            const SizedBox(height: 16), // Espaçamento
+
+            // Lista horizontal de cards de filmes
             SizedBox(
-              height: 280, // altura do card (imagem + texto)
+              height: 280, // Altura total do card
               child: ListView.separated(
-                scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.horizontal, // Rola para o lado
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: filmes.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 16),
+                separatorBuilder: (_, __) => const SizedBox(width: 16), // Espaço entre os cards
+
+                // Monta cada item (filme)
                 itemBuilder: (context, index) {
                   final filme = filmes[index];
+
                   return GestureDetector(
+                    // Ao clicar no card, abre a tela de assentos passando o filme
                     onTap: () {
                       Navigator.push(
                         context,
@@ -77,40 +90,51 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     },
+
+                    // Card visual do filme
                     child: Card(
-                      color: Colors.grey[900],
+                      color: Colors.grey[900], // Cor escura para combinar com fundo preto
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: SizedBox(
-                        width: 150,
+                        width: 150, // Largura fixa do card
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
+                            // Imagem do poster do filme com cantos arredondados em cima
                             ClipRRect(
                               borderRadius: const BorderRadius.vertical(
-                                  top: Radius.circular(16)),
+                                top: Radius.circular(16),
+                              ),
                               child: Image.network(
                                 filme.posterUrl,
                                 height: 200,
                                 width: 150,
-                                fit: BoxFit.contain,
+                                fit: BoxFit.contain, // Ajusta a imagem no espaço
                                 errorBuilder: (context, error, stackTrace) =>
                                     Container(
                                   height: 200,
                                   width: 150,
                                   color: Colors.grey,
-                                  child: const Icon(Icons.broken_image,
-                                      color: Colors.white, size: 48),
+                                  child: const Icon(
+                                    Icons.broken_image,
+                                    color: Colors.white,
+                                    size: 48,
+                                  ),
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 12),
+
+                            const SizedBox(height: 12), // Espaço entre imagem e texto
+
+                            // Nome e ano do filme
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Column(
                                 children: [
+                                  // Nome do filme
                                   Text(
                                     filme.nome,
                                     style: const TextStyle(
@@ -119,10 +143,13 @@ class HomePage extends StatelessWidget {
                                       fontSize: 16,
                                     ),
                                     textAlign: TextAlign.center,
-                                    maxLines: 1, // Limita o nome a 1 linha
-                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1, // Limita a 1 linha
+                                    overflow: TextOverflow.ellipsis, // Coloca "..." se for muito grande
                                   ),
+
                                   const SizedBox(height: 4),
+
+                                  // Ano do filme
                                   Text(
                                     '${filme.ano}',
                                     style: const TextStyle(

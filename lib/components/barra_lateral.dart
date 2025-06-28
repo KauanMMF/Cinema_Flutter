@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/lista_quartos.dart';
 import 'package:flutter_application_1/pages/login.dart';
-import 'package:flutter_application_1/pages/hospede_form.dart';
-import 'package:flutter_application_1/pages/hospedes_list_screen.dart';
 
 class BarraLateral extends StatelessWidget {
   const BarraLateral({super.key});
