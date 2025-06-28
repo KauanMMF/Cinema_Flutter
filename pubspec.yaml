@@ -14,12 +14,12 @@ dependencies:
   # Adicione outras dependências aqui
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.2.3 # Use a versão mais recente
-  intl: ^0.19.0 # Adicione esta linha
+  intl: ^0.20.2 # Adicione esta linha
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0 # Use a versão mais recente
+  flutter_lints: ^6.0.0 # Use a versão mais recente
 
 flutter:
   uses-material-design: true
