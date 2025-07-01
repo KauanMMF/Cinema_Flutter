@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/login.dart'; // Importe a tela de login
+import 'pages/login.dart';
 
 void main() {
   runApp(const AbsolutoCinemaApp());
@@ -24,7 +24,7 @@ class AbsolutoCinemaApp extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.white),
         ),
       ),
-      home: const LoginUsuario(title: 'Login'), // Altere aqui
+      home: const LoginUsuario(title: 'Login'), // Tela que será aberta quando rodar
     );
   }
 }

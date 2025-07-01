@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/cadastro.dart';
-import '../pages/home_page.dart'; // Importação correta da HomePage
+import '../pages/home_page.dart'; 
 import '../service/account_manager.dart';
 import '../service/session.dart';
 
@@ -65,7 +65,6 @@ class _LoginUsuarioState extends State<LoginUsuario> {
           // Navega para a HomePage e remove a tela de login da pilha
           Navigator.pushReplacement(
             context,
-            // CORREÇÃO AQUI: Use 'HomePage()' com 'H' e 'P' maiúsculos
             MaterialPageRoute(builder: (context) => const HomePage()),
           );
         } else {
@@ -89,13 +88,13 @@ class _LoginUsuarioState extends State<LoginUsuario> {
     super.dispose();
   }
 
-  // Monta a interface da tela de login
+  // TELA
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Barra superior da tela
       appBar: AppBar(title: const Text('Login'), centerTitle: true),
-      // Corpo da tela centralizado
+      // Corp
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -110,7 +109,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
                 Icon(
                   Icons.movie,
                   size: 80,
-                  color: Colors.red[900], // Troque aqui
+                  color: Colors.red[900], 
                 ),
                 const SizedBox(height: 24.0),
 
@@ -195,8 +194,8 @@ class _LoginUsuarioState extends State<LoginUsuario> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
                           ),
-                          backgroundColor: Colors.red[900], // Troque aqui
-                          foregroundColor: Colors.white, // Texto branco
+                          backgroundColor: Colors.red[900], 
+                          foregroundColor: Colors.white, 
                         ),
                         onPressed: _login,
                         child: const Text(
@@ -206,7 +205,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
                       ),
                 const SizedBox(height: 16.0),
 
-                // Link para tela de cadastro
+                // Link para tela de cadastro NAO TEM UMA CONTA?
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

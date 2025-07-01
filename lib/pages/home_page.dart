@@ -42,14 +42,15 @@ class HomePage extends StatelessWidget {
       ),
     ];
 
+    // TELA
     return Scaffold(
-      backgroundColor: Colors.black, // Cor de fundo preta
+      backgroundColor: Colors.black, 
 
       // Barra superior com o título do app
       appBar: AppBar(
         title: const Text('Absoluto Cinema'),
-        backgroundColor: Colors.red[900], // Vermelho escuro
-        centerTitle: true, // Centraliza o texto
+        backgroundColor: Colors.red[900], 
+        centerTitle: true, 
       ),
 
       // Corpo da tela
@@ -71,11 +72,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 16), // Espaçamento
+            const SizedBox(height: 16),
 
             // Lista horizontal de cards de filmes
             SizedBox(
-              height: 280, // Altura total do card
+              height: 280, 
               child: ListView.separated(
                 scrollDirection: Axis.horizontal, // Rola para o lado
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -89,7 +90,7 @@ class HomePage extends StatelessWidget {
                   return GestureDetector(
                     // Ao clicar no card, abre a tela de assentos passando o filme
                     onTap: () {
-                      Navigator.push(
+                      Navigator.push( //LEVA PRA PROXIMA PAGINA
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
@@ -100,12 +101,12 @@ class HomePage extends StatelessWidget {
 
                     // Card visual do filme
                     child: Card(
-                      color: Colors.grey[900], // Cor escura para combinar com fundo preto
+                      color: Colors.grey[900], // Cor cinza pra diferenciar do fndo
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: SizedBox(
-                        width: 150, // Largura fixa do card
+                        width: 150, // Largura fixa
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -118,8 +119,8 @@ class HomePage extends StatelessWidget {
                                 filme.posterUrl,
                                 height: 200,
                                 width: 150,
-                                fit: BoxFit.contain, // Ajusta a imagem no espaço
-                                errorBuilder: (context, error, stackTrace) =>
+                                fit: BoxFit.contain,
+                                errorBuilder: (context, error, stackTrace) => //Para quando da erro
                                     Container(
                                   height: 200,
                                   width: 150,
@@ -135,7 +136,7 @@ class HomePage extends StatelessWidget {
 
                             const SizedBox(height: 12), // Espaço entre imagem e texto
 
-                            // Nome e ano do filme
+                            // Parte do nome e ano do filme
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 8.0),
@@ -150,8 +151,8 @@ class HomePage extends StatelessWidget {
                                       fontSize: 16,
                                     ),
                                     textAlign: TextAlign.center,
-                                    maxLines: 1, // Limita a 1 linha
-                                    overflow: TextOverflow.ellipsis, // Coloca "..." se for muito grande
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis, // Coloca ... se for muito grande
                                   ),
 
                                   const SizedBox(height: 4),
