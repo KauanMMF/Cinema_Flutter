@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/cadastro.dart';
-import '../pages/home_page.dart';
+import '../pages/home_page.dart'; // Importação correta da HomePage
 import '../service/account_manager.dart';
 import '../service/session.dart';
 
@@ -65,6 +65,7 @@ class _LoginUsuarioState extends State<LoginUsuario> {
           // Navega para a HomePage e remove a tela de login da pilha
           Navigator.pushReplacement(
             context,
+            // CORREÇÃO AQUI: Use 'HomePage()' com 'H' e 'P' maiúsculos
             MaterialPageRoute(builder: (context) => const HomePage()),
           );
         } else {

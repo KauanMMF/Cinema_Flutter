@@ -3,7 +3,9 @@ class Filme {
   final String nome;
   final String posterUrl;
   final int ano;
-  final List<bool> assentos; // true = ocupado, false = disponível
+  final List<bool> assentos; 
+  final String duracao; // true = ocupado, false = disponível
+  final String resumo;
 
   Filme({
     required this.id,
@@ -11,5 +13,7 @@ class Filme {
     required this.posterUrl,
     required this.ano,
     required this.assentos,
+    required this.duracao,
+    required this.resumo,
   });
 }

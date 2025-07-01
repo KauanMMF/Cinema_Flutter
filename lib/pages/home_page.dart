@@ -15,7 +15,10 @@ class HomePage extends StatelessWidget {
         posterUrl:
             'https://xl.movieposterdb.com/23_10/2023/15398776/xl_oppenheimer-movie-poster_0d167e2f.jpg',
         ano: 2023,
-        assentos: List.filled(40, false), // 40 assentos disponíveis
+        assentos: List.filled(200, false),
+        duracao: '2 h 58 min',
+        resumo: "Escrito e dirigido por Christopher Nolan, Oppenheimer é um épico suspense filmado em IMAX® que leva o público ao paradoxo pulsante do homem enigmático que deve arriscar destruir o mundo para salvá-lo.",
+
       ),
       Filme(
         id: '2',
@@ -23,7 +26,9 @@ class HomePage extends StatelessWidget {
         posterUrl:
             'https://xl.movieposterdb.com/09_02/1998/120382/xl_120382_f27e145a.jpg?v=2022-07-21%2014:09:05',
         ano: 1998,
-        assentos: List.filled(40, false),
+        assentos: List.filled(150, false),
+        duracao: '1 h 36 min',
+        resumo: "Truman leva uma vida simples com sua esposa, sem saber que tudo ao seu redor é parte de um progama de TV. Aos poucos, acontecimentos despertam sua desconfiança.",
       ),
       Filme(
         id: '3',
@@ -31,7 +36,9 @@ class HomePage extends StatelessWidget {
         posterUrl:
             'https://xl.movieposterdb.com/08_04/2007/480249/xl_480249_f92d0462.jpg?v=2024-11-30%2005:13:42',
         ano: 2007,
-        assentos: List.filled(40, false),
+        assentos: List.filled(180, false),
+        duracao: '1 h 36 min',
+        resumo: "Will Smith interpreta este solitário sobrevivente em Eu Sou a Lenda, um épico de ação que mistura doses generosas de tensão com uma incrível visão de uma desolada Manhattan.",
       ),
     ];
 
