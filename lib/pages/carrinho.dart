@@ -95,9 +95,6 @@ class CarrinhoPageState extends State<CarrinhoPage> {
                             duration: const Duration(seconds: 2),
                           ),
                         );
-
-                        // Aqui poderia navegar para próxima tela
-                        // Navigator.push(...);
                       }
                     : null,
                 style: ElevatedButton.styleFrom(
